@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Saitel - Encuestas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+
+    <script src="js/alertify.min.js"></script>
+    <link rel="stylesheet" href="css/alertify.core.css" />
+    <link rel="stylesheet" href="css/alertify.default.css" id="toggleCSS" />
+    <script src="js/busqueda.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <script type="text/javascript">
+  var valida1=0;
+  var valida2=0;
+  var valida3=0;
+  var valida4=0;
+  var valida5=0;
+  var val1=0;
+  var val2=0;
+  var val3=0;
+  var val4=0;
+  var val5=0;
+  var suma=0;
+  $(document).ready(function()
+    {
+      var elementos = document.getElementsByName("options");
+      var elementos2 = document.getElementsByName("options1");
+      var elementos3 = document.getElementsByName("options2");
+      var elementos4 = document.getElementsByName("options3");
+      var elementos5 = document.getElementsByName("options4");
+      $("input[name=options]").change(function () { 
+        document.getElementById("guardad").innerHTML = "29";
+        stopa();
+        inicio();
+        suma=0;
+        valida1=1;
+        suma=valida1+valida2+valida3+valida4+valida5;
+        val1=$(this).val();
+        if(suma==15)
+        {          
+          datosguardados(val1, val2, val3, val4, val5, 
+            document.getElementsByName("comen")[0].value, document.getElementsByName("comen1")[0].value, 
+            document.getElementsByName("comen2")[0].value, document.getElementsByName("comen3")[0].value,
+            document.getElementsByName("comen4")[0].value);
+          setTimeout(function(){location.reload()},3000);
+          for(var i=0; i<elementos5.length; i++) {
+            if (elementos5[i].checked==true) {
+              elementos5[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos4.length; i++) {
+            if (elementos4[i].checked==true) {
+              elementos4[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos3.length; i++) {
+            if (elementos3[i].checked==true) {
+              elementos3[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos2.length; i++) {
+            if (elementos2[i].checked==true) {
+              elementos2[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos.length; i++) {
+            if (elementos[i].checked==true) {
+              elementos[i].checked=false;
+            };
+          }
+          valida1=0;
+          valida2=0;
+          valida3=0;
+          valida4=0;
+          valida5=0;
+
+          document.getElementsByName("comen")[0].value=""; 
+          document.getElementsByName("comen1")[0].value=""; 
+          document.getElementsByName("comen2")[0].value=""; 
+          document.getElementsByName("comen3")[0].value=""; 
+          document.getElementsByName("comen4")[0].value=""; 
+          document.getElementById("guardad").innerHTML = "";
+
+        }
+      });
+
+      $("input[name=options1]").change(function () {  
+        document.getElementById("guardad").innerHTML = "29";
+        stopa();
+        inicio();
+        suma=0;
+        valida2=2;
+        suma=valida1+valida2+valida3+valida4+valida5;
+        val2=$(this).val();
+        if(suma==15)
+        {
+          datosguardados(val1, val2, val3, val4, val5, 
+            document.getElementsByName("comen")[0].value, document.getElementsByName("comen1")[0].value, 
+            document.getElementsByName("comen2")[0].value, document.getElementsByName("comen3")[0].value,
+            document.getElementsByName("comen4")[0].value);
+          setTimeout(function(){location.reload()},3000);
+          for(var i=0; i<elementos5.length; i++) {
+            if (elementos5[i].checked==true) {
+              elementos5[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos4.length; i++) {
+            if (elementos4[i].checked==true) {
+              elementos4[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos3.length; i++) {
+            if (elementos3[i].checked==true) {
+              elementos3[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos2.length; i++) {
+            if (elementos2[i].checked==true) {
+              elementos2[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos.length; i++) {
+            if (elementos[i].checked==true) {
+              elementos[i].checked=false;
+            };
+          }
+          valida1=0;
+          valida2=0;
+          valida3=0;
+          valida4=0;
+          valida5=0;
+
+          document.getElementsByName("comen")[0].value=""; 
+          document.getElementsByName("comen1")[0].value=""; 
+          document.getElementsByName("comen2")[0].value=""; 
+          document.getElementsByName("comen3")[0].value=""; 
+          document.getElementsByName("comen4")[0].value=""; 
+          document.getElementById("guardad").innerHTML = "";
+        }
+      });
+
+      $("input[name=options2]").change(function () {  
+        document.getElementById("guardad").innerHTML = "29";
+        stopa();
+        inicio();
+        suma=0;
+        valida3=3;
+        suma=valida1+valida2+valida3+valida4+valida5;
+        val3=$(this).val();
+        if(suma==15)
+        {
+          datosguardados(val1, val2, val3, val4, val5, 
+            document.getElementsByName("comen")[0].value, document.getElementsByName("comen1")[0].value, 
+            document.getElementsByName("comen2")[0].value, document.getElementsByName("comen3")[0].value,
+            document.getElementsByName("comen4")[0].value);
+          setTimeout(function(){location.reload()},3000);
+          for(var i=0; i<elementos5.length; i++) {
+            if (elementos5[i].checked==true) {
+              elementos5[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos4.length; i++) {
+            if (elementos4[i].checked==true) {
+              elementos4[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos3.length; i++) {
+            if (elementos3[i].checked==true) {
+              elementos3[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos2.length; i++) {
+            if (elementos2[i].checked==true) {
+              elementos2[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos.length; i++) {
+            if (elementos[i].checked==true) {
+              elementos[i].checked=false;
+            };
+          }
+          valida1=0;
+          valida2=0;
+          valida3=0;
+          valida4=0;
+          valida5=0;
+
+          document.getElementsByName("comen")[0].value=""; 
+          document.getElementsByName("comen1")[0].value=""; 
+          document.getElementsByName("comen2")[0].value=""; 
+          document.getElementsByName("comen3")[0].value=""; 
+          document.getElementsByName("comen4")[0].value=""; 
+          document.getElementById("guardad").innerHTML = "";
+        }
+      });
+
+      $("input[name=options3]").change(function () {  
+        document.getElementById("guardad").innerHTML = "29";
+        stopa();
+        inicio();
+        suma=0;
+        valida4=4;
+        suma=valida1+valida2+valida3+valida4+valida5;
+        val4=$(this).val();
+        if(suma==15)
+        {
+          datosguardados(val1, val2, val3, val4, val5, 
+            document.getElementsByName("comen")[0].value, document.getElementsByName("comen1")[0].value, 
+            document.getElementsByName("comen2")[0].value, document.getElementsByName("comen3")[0].value,
+            document.getElementsByName("comen4")[0].value);
+          setTimeout(function(){location.reload()},3000);
+          for(var i=0; i<elementos5.length; i++) {
+            if (elementos5[i].checked==true) {
+              elementos5[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos4.length; i++) {
+            if (elementos4[i].checked==true) {
+              elementos4[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos3.length; i++) {
+            if (elementos3[i].checked==true) {
+              elementos3[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos2.length; i++) {
+            if (elementos2[i].checked==true) {
+              elementos2[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos.length; i++) {
+            if (elementos[i].checked==true) {
+              elementos[i].checked=false;
+            };
+          }
+          valida1=0;
+          valida2=0;
+          valida3=0;
+          valida4=0;
+          valida5=0;
+
+          document.getElementsByName("comen")[0].value=""; 
+          document.getElementsByName("comen1")[0].value=""; 
+          document.getElementsByName("comen2")[0].value=""; 
+          document.getElementsByName("comen3")[0].value=""; 
+          document.getElementsByName("comen4")[0].value=""; 
+          document.getElementById("guardad").innerHTML = "";
+        }
+      });
+
+      $("input[name=options4]").change(function () {  
+        document.getElementById("guardad").innerHTML = "29";
+        stopa();
+        inicio();
+        suma=0;
+        valida5=5;
+        suma=valida1+valida2+valida3+valida4+valida5;
+        val5=$(this).val();
+        if(suma==15)
+        {
+          datosguardados(val1, val2, val3, val4, val5, 
+            document.getElementsByName("comen")[0].value, document.getElementsByName("comen1")[0].value, 
+            document.getElementsByName("comen2")[0].value, document.getElementsByName("comen3")[0].value,
+            document.getElementsByName("comen4")[0].value);
+          setTimeout(function(){location.reload()},3000);
+          for(var i=0; i<elementos5.length; i++) {
+            if (elementos5[i].checked==true) {
+              elementos5[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos4.length; i++) {
+            if (elementos4[i].checked==true) {
+              elementos4[i].checked=false;
+            };
+          }
+          for(var i=0; i<elementos3.length; i++) {
+            if (elementos3[i].checked==true) {
+              elementos3[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos2.length; i++) {
+            if (elementos2[i].checked==true) {
+              elementos2[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos.length; i++) {
+            if (elementos[i].checked==true) {
+              elementos[i].checked=false;
+            };
+          }
+          valida1=0;
+          valida2=0;
+          valida3=0;
+          valida4=0;
+          valida5=0;
+
+          document.getElementsByName("comen")[0].value=""; 
+          document.getElementsByName("comen1")[0].value=""; 
+          document.getElementsByName("comen2")[0].value=""; 
+          document.getElementsByName("comen3")[0].value=""; 
+          document.getElementsByName("comen4")[0].value=""; 
+          document.getElementById("guardad").innerHTML = "";
+        }
+      });
+    });
+  </script>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Sistema de Encuestas para los clientes de Saitel</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ENCUESTA DE SATISFACCIÓN DEL SERVICIO</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <p><STRONG>INSTRUCCIONES: </STRONG>Las siguientes preguntas se reﬁeren a su grado de satisfacción con respecto al servicio brindado que recibe. Por favor, responda las siguientes preguntas siendo lo más sincero posible 
+        ya que su opinión es muy importante para nosotros y nos permitirá mejorar el servicio de Internet o su atención. Le recordamos que este cuestionario es anónimo</p>
+        <p><STRONG>Preguntas: </STRONG>En base a la escala que a continuación se indica califique los siguientes aspectos del servicio de internet relacionados con la atención al cliente, en los últimos seis meses.</p>
+        <table class="table">
+          <thead>
+              <tr>
+                  <th>GRADO</th>
+                  <th>CALIFICACIÓN</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Muy Bueno</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <td>Bueno</td>
+                  <td>2</td>
+              </tr>
+              <tr>
+                  <td>Aceptable</td>
+                  <td>3</td>
+              </tr>
+              <tr>
+                  <td>Malo</td>
+                  <td>4</td>
+              </tr>
+              <tr>
+                  <td>Muy Malo</td>
+                  <td>5</td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <h2><strong>Amabilidad</strong></h2><h4>El Trato o actitud del personal hacie el ususario.</h4>
+      <div class="btn-group"  onClick="stoper();testtimeout()">
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 1' }">
+            <input type="radio" value="1" name="options" id="option1" data-bind="checked: selectedOption, checkedValue: 'Option 1'"> 1
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 2' }">
+            <input type="radio" value="2" name="options" id="option2" data-bind="checked: selectedOption, checkedValue: 'Option 2'"> 2 
+        </label>
+       <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 3' }">
+            <input type="radio" value="3" name="options" id="option3" data-bind="checked: selectedOption, checkedValue: 'Option 3'"> 3 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 4' }">
+            <input type="radio" value="4" name="options" id="option4" data-bind="checked: selectedOption, checkedValue: 'Option 4'"> 4 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 5' }">
+            <input type="radio" value="5" name="options" id="option5"  data-bind="checked: selectedOption, checkedValue: 'Option 5'"> 5 
+        </label> 
+        <label class="btn btn-primary" >
+          Comentario (Opcional)
+            <input type="text" class="form-control" name="comen" id="comen">
+        </label>
+      </div>
+
+      <hr>
+
+      <h4>La Paciencia para antender las quejas y sugerencias de los usuarios.</h4>
+      <div class="btn-group" onClick="stoper();testtimeout()">
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 1' }">
+            <input type="radio" value="1" name="options1" id="option11" data-bind="checked: selectedOption, checkedValue: 'Option 1'"> 1
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 2' }">
+            <input type="radio" value="2" name="options1" id="option22" data-bind="checked: selectedOption, checkedValue: 'Option 2'"> 2 
+        </label>
+       <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 3' }">
+            <input type="radio" value="3"name="options1" id="option33" data-bind="checked: selectedOption, checkedValue: 'Option 3'"> 3 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 4' }">
+            <input type="radio" value="4" name="options1" id="option44" data-bind="checked: selectedOption, checkedValue: 'Option 4'"> 4 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 5' }">
+            <input type="radio" value="5" name="options1" id="option55"  data-bind="checked: selectedOption, checkedValue: 'Option 5'"> 5 
+        </label> 
+        <div id="guardad" style="position: absolute;right: -400px; bottom: -50px; height: 200px; width: 300px; text-align: center; font-size: 144px;">
+        </div>
+        <label class="btn btn-primary" >
+          Comentario (Opcional)
+            <input type="text" class="form-control" name="comen1" id="comen1">
+        </label>
+      </div>
+
+      <hr>
+
+      <h2><strong>Disponiblidad</strong></h2><h4>La posiblidad del personal para ayudarle a solucionar sus requerimientos.</h4>
+      <div class="btn-group" onClick="stoper();testtimeout()">
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 1' }">
+            <input type="radio" value="1" name="options2" id="option11" data-bind="checked: selectedOption, checkedValue: 'Option 1'"> 1
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 2' }">
+            <input type="radio" value="2" name="options2" id="option22" data-bind="checked: selectedOption, checkedValue: 'Option 2'"> 2 
+        </label>
+       <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 3' }">
+            <input type="radio" value="3"name="options2" id="option33" data-bind="checked: selectedOption, checkedValue: 'Option 3'"> 3 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 4' }">
+            <input type="radio" value="4" name="options2" id="option44" data-bind="checked: selectedOption, checkedValue: 'Option 4'"> 4 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 5' }">
+            <input type="radio" value="5" name="options2" id="option55"  data-bind="checked: selectedOption, checkedValue: 'Option 5'"> 5 
+        </label> 
+        <label class="btn btn-primary" >
+          Comentario (Opcional)
+            <input type="text" class="form-control" name="comen2" id="comen2">
+        </label>
+      </div>
+
+      <hr>
+
+      <h2><strong>Rapidez</strong></h2><h4>Agilidad o rapidez para resolver las consultas o reclamos formulados por el usuario</h4>
+      <div class="btn-group" onClick="stoper();testtimeout()">
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 1' }">
+            <input type="radio" value="1" name="options3" id="option111" data-bind="checked: selectedOption, checkedValue: 'Option 1'"> 1
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 2' }">
+            <input type="radio" value="2" name="options3" id="option222" data-bind="checked: selectedOption, checkedValue: 'Option 2'"> 2 
+        </label>
+       <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 3' }">
+            <input type="radio" value="3" name="options3" id="option333" data-bind="checked: selectedOption, checkedValue: 'Option 3'"> 3 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 4' }">
+            <input type="radio" value="4" name="options3" id="option444" data-bind="checked: selectedOption, checkedValue: 'Option 4'"> 4 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 5' }">
+            <input type="radio" value="5" name="options3" id="option555" data-bind="checked: selectedOption, checkedValue: 'Option 5'"> 5 
+        </label>
+        <label class="btn btn-primary" >
+          Comentario (Opcional)
+            <input type="text" class="form-control" name="comen3" id="comen3">
+        </label>
+      </div>
+
+      <hr>
+
+      <h4>Tiempo de espera para ser atendido, al momento de comunicar un reclamo o queja</h4>
+      <div class="btn-group" onClick="stoper();testtimeout()">
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 1' }">
+            <input type="radio" value="1" name="options4" id="option111" data-bind="checked: selectedOption, checkedValue: 'Option 1'"> 1
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 2' }">
+            <input type="radio" value="2" name="options4" id="option222" data-bind="checked: selectedOption, checkedValue: 'Option 2'"> 2 
+        </label>
+       <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 3' }">
+            <input type="radio" value="3" name="options4" id="option333" data-bind="checked: selectedOption, checkedValue: 'Option 3'"> 3 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 4' }">
+            <input type="radio" value="4" name="options4" id="option444" data-bind="checked: selectedOption, checkedValue: 'Option 4'"> 4 
+        </label>
+        <label class="btn btn-primary" data-bind="css: { 'active': selectedOption() === 'Option 5' }">
+            <input type="radio" value="5" name="options4" id="option555" data-bind="checked: selectedOption, checkedValue: 'Option 5'"> 5 
+        </label>
+        <label class="btn btn-primary" >
+          Comentario (Opcional)
+            <input type="text" class="form-control" name="comen4" id="comen4">
+        </label>
+      </div>
+      
+
+       <script type="text/javascript">
+       function guardar(){
+        var v1=5;
+        var v2=5;
+        var v3=5;
+        var v4=5;
+        var v5=5;
+        var elementos = document.getElementsByName("options");
+        var elementos2 = document.getElementsByName("options1");
+        var elementos3 = document.getElementsByName("options2");
+        var elementos4 = document.getElementsByName("options3");
+        var elementos5 = document.getElementsByName("options4");
+          for(var i=0; i<elementos5.length; i++) {
+            if (elementos5[i].checked==true) {
+              v5=elementos5[i].value;
+            };
+          }
+
+          for(var i=0; i<elementos4.length; i++) {
+            if (elementos4[i].checked==true) {
+              v4=elementos4[i].value;
+            };
+          }
+
+          for(var i=0; i<elementos3.length; i++) {
+            if (elementos3[i].checked==true) {
+              v3=elementos3[i].value;
+            };
+          }
+
+          for(var i=0; i<elementos2.length; i++) {
+            if (elementos2[i].checked==true) {
+              v2=elementos2[i].value;
+            };
+          }
+
+          for(var i=0; i<elementos.length; i++) {
+            if (elementos[i].checked==true) {
+              v1=elementos[i].value;
+            };
+          }
+
+          //Formateador
+          for(var i=0; i<elementos5.length; i++) {
+            if (elementos5[i].checked==true) {
+              elementos5[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos4.length; i++) {
+            if (elementos4[i].checked==true) {
+              elementos4[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos3.length; i++) {
+            if (elementos3[i].checked==true) {
+              elementos3[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos2.length; i++) {
+            if (elementos2[i].checked==true) {
+              elementos2[i].checked=false;
+            };
+          }
+
+          for(var i=0; i<elementos.length; i++) {
+            if (elementos[i].checked==true) {
+              elementos[i].checked=false;
+            };
+          }
+          datosguardados(v1, v2, v3, v4, v5, 
+            document.getElementsByName("comen")[0].value, document.getElementsByName("comen1")[0].value, 
+            document.getElementsByName("comen2")[0].value, document.getElementsByName("comen3")[0].value,
+            document.getElementsByName("comen4")[0].value);
+
+          document.getElementsByName("comen")[0].value=""; 
+          document.getElementsByName("comen1")[0].value=""; 
+          document.getElementsByName("comen2")[0].value=""; 
+          document.getElementsByName("comen3")[0].value=""; 
+          document.getElementsByName("comen4")[0].value=""; 
+          document.getElementById("guardad").innerHTML = "";
+
+          setTimeout(function(){document.getElementById("guardad").innerHTML = ""},3000);  
+          
+       }
+
+       var x = 0; var timer; var reloj; 
+       function testtimeout(){
+          timer = setTimeout(function(){guardar()},30000);
+        }
+
+        function stoper() {
+          clearTimeout(timer);
+        }
+
+        function stopa() {
+          clearTimeout(reloj);
+        }
+
+        function inicio() {
+          reloj=setInterval(procesar,1000);
+        }
+        function procesar()
+        {
+          var nro=parseInt(document.getElementById('guardad').innerHTML);
+          nro--;
+          if(nro==1)
+          {
+            document.getElementById('guardad').innerHTML="";
+            stopa();
+          }
+          document.getElementById('guardad').innerHTML=nro;
+        }
+       </script>
+      <footer>
+        <p>&copy; Saitel 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

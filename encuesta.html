@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Saitel - Encuestas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+
+    <script src="js/alertify.min.js"></script>
+    <link rel="stylesheet" href="css/alertify.core.css" />
+    <link rel="stylesheet" href="css/alertify.default.css" id="toggleCSS" />
+    <script src="js/busqueda.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <script type="text/javascript">
+     function genera(mue){ 
+      if(ciusuario.value!='')
+      {
+        consulta(ciusuario.value);
+      }
+     }
+     </script>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <br>
+        <div class="input-group input-group-sm col-xs-6 col-sm-7">
+            <span class="input-group-addon">CI o RUC</span>
+            <input type="text" class="form-control" id="ciusuario" name="ciusuario" placeholder="N° de Cedula" onKeyPress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue=false; ">
+            <span class="input-group-addon"></span>
+            <button type="button" href="#enc" class="btn btn-success form-control" onclick=genera(this);act(); >Generar</button>
+          </div>
+          <div class="video" id="encuesta">
+          <p><STRONG>INSTRUCCIONES: </STRONG>Las siguientes preguntas se reﬁeren a su grado de satisfacción con respecto al servicio brindado que recibe. Por favor, responda las siguientes preguntas siendo lo más sincero posible 
+        ya que su opinión es muy importante para nosotros y nos permitirá mejorar el servicio de Internet o su atención. Le recordamos que este cuestionario es anónimo, pero solo los clientes de SAITEL lo pordran realizar.</p>
+        <p><STRONG>Preguntas: </STRONG>En base a la escala que a continuación se indica califique los siguientes aspectos del servicio de internet relacionados con la atención al cliente, en los últimos seis meses.</p>
+        <table class="table">
+          <thead>
+              <tr>
+                  <th>GRADO</th>
+                  <th>CALIFICACIÓN</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Muy Bueno</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <td>Bueno</td>
+                  <td>2</td>
+              </tr>
+              <tr>
+                  <td>Aceptable</td>
+                  <td>3</td>
+              </tr>
+              <tr>
+                  <td>Malo</td>
+                  <td>4</td>
+              </tr>
+              <tr>
+                  <td>Muy Malo</td>
+                  <td>5</td>
+              </tr>
+          </tbody>
+      </table>
+      <p><STRONG>No lea esto: </STRONG>En cada pregunta tendra 50 segundos para llenarlo si no esta lleno todo automaticante se guardara con los campos llenos, si marca todas las preguntas inmediatamente se guardara con los datos.</p>
+      </div>
+    </div>
+    </div>
+
+
+     <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
